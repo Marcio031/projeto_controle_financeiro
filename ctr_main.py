@@ -1,8 +1,7 @@
 import controle_proprio as ctr_P
 import streamlit as st
-#python -m streamlit run ctr_main.py
+
 #---------------------------------------------------------------
-# 6 - menu 
 
 st.title("\tMenu de controle financeiro")
 opcao = st.sidebar.radio(
@@ -54,7 +53,7 @@ elif opcao == "Relatório final":
     st.header("Relatório final")
     total_recebido, total_gastado, saldo_final = ctr_P.relatorio_final()
 
-    # Agora o Streamlit mostra as informações
+   
     st.subheader("Relatório final")
     st.write(f"Total recebido: R${total_recebido:.2f}")
     st.write(f"Total gasto: R${total_gastado:.2f}")
@@ -63,4 +62,5 @@ elif opcao == "Relatório final":
         st.success(f"Saldo final positivo: R${saldo_final:.2f}")
     else:
         st.error(f"Saldo final negativo: R${saldo_final:.2f}")
+
 
